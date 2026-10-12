@@ -5,11 +5,10 @@ export interface PostSeries {
   posts: string[];
 }
 
-// List each series once, in reading order. Titles come from the posts themselves.
 export const postSeries: PostSeries[] = [
   {
     title: "bolota.eu",
-    posts: ["1_bolotaeuv1", "6_bolotaeuv2", "15_bolotav3"],
+    posts: ["1_bolotaeuv1", "6_bolotaeuv2", "15_bolotav3", "achichorrov4"],
   },
   {
     title: "Basketball shot counter",

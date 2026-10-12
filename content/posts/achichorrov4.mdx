@@ -1,0 +1,48 @@
+---
+title: Moving to my own domain
+description: Deprecating bolota.eu and moving my personal website to my own domain
+date: 2026-10-15
+published: true
+interactive: false
+icon: cd
+---
+
+Another year, another update to this website. I wanted to host the website on my own tiny VPS, and I wanted to get rid of a bunch of useless features and bloat, keeping only what I think is essential. Here's the result:
+
+<div className="no-prose overflow-x-auto">
+  <table>
+    <thead>
+      <tr><th scope="col">Headline</th><th scope="col">Legacy bolota.eu</th><th scope="col">Current achichorro.com</th><th scope="col">Difference</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Homepage external JavaScript transfer</td><td>305.3 kB</td><td>1.4 kB</td><td>-99.5%</td></tr>
+      <tr><td>Entire observed homepage transfer</td><td>486.6 kB</td><td>68.8 kB</td><td>-85.9%</td></tr>
+      <tr><td>Direct production dependencies</td><td>19</td><td>2</td><td>−89.5%</td></tr>
+      <tr><td>Homepage requests</td><td>35</td><td>5</td><td>-85.7%</td></tr>
+    </tbody>
+  </table>
+</div>
+
+### Almost no homepage JavaScript
+
+The two main changes are that I no longer use Next.js and I no longer track analytics (that was kind of wack anyway). The only JavaScript file in the homepage is a small newsletter signup script.
+
+React generates the site’s HTML at build time, but only runs in the browser for interactive articles, such as the Sudoku post. Next.js was doing the same, but would still load React on every page for small shared features (e.g. analytics and theme switching).
+
+### Moving domain
+
+I also moved away from bolota.eu to achichorro.com. In the previous post I talk about my personal dashboard, for which I finally got my own personal domain. Moving this site to it too was overdue. On top of that, I now host the website on a VPS instead of Vercel, which so far has had only positive impact in the dev experience (set up my own simple CI, adjusted to this site's needs).
+
+### Content and design
+
+I also made some extra decisions to make the website leaner: I didn't like themes, as they were adding unnecessary overhead to writing posts (making colors work with diagrams for both dark and light theme, etc); writing is hard enough by itself. Now, there's only a dark theme and that's it.
+
+Then I removed some old pages: the Posts tab is now just the homepage. No need for a separate page, it's not like I write enough to justify that. Then, I removed the about tab as well: I realised I don't really know how to describe myself anyway, so what the hell, I'll let whatever I write about be the judge of that. 
+
+Finally, I adapted the design, to make it more sober. Less green, less visual noise, more simplicity, while, at the same time, still keeping most of the identity of the previous design.
+
+Anyway, here goes, as per tradition: a screenshot of the current state of the website for posterity.
+
+<div className="flex justify-center">
+  <img className="border-2 border-border rounded-md" src="https://media.achichorro.com/posts/achichorrov4/achichorrov4_screenshot2.png" width="650" alt="Screenshot of achichorro.com after the migration from bolota.eu" />
+</div>
